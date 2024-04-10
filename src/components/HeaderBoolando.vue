@@ -21,10 +21,6 @@
 <style lang="scss" scoped>
     @use '../style/partials/mixin' as *;
 
-    .debug.container{
-        background-color: green;
-    }
-
     .row{
         @include display-flex
     }

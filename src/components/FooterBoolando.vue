@@ -21,8 +21,4 @@
     .row{
         @include display-flex
     }
-    
-    .debug {
-        background-color: red;
-    }
 </style>

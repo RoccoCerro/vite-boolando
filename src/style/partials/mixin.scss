@@ -1,4 +1,11 @@
+@use './utilities.scss' as *;
+
 @mixin display-flex{
     justify-content: space-between;
     align-items: center;
+}
+
+@mixin card{
+    width: 100%;
+    height: 100%;
 }

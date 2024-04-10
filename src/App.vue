@@ -37,13 +37,25 @@
 
 <style lang="scss">
   @use './style/general.scss';
+  @use './style/partials/utilities.scss' as *;
 
   .row.page{
     flex-direction: column;
     height: 100vh;
   }
 
+  .col.page-header{
+    background-color: $header-background-color;
+  }
+
   .col.page-main{
     flex-grow: 1;
   }
+
+  .col.page-footer{
+    background-color: $footer-background-color;
+  }
+
+
+
 </style>
