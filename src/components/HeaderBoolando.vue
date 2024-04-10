@@ -3,7 +3,7 @@
 </script>
 
 <template>
-    <div class="container debug">
+    <div class="container">
         <div class="row">
             <div class="col">
                 donna

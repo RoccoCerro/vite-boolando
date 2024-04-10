@@ -1,102 +1,94 @@
 <script>
-
+    export default{
+        data(){
+            return{
+                clothes: [
+                    {
+                        brand: "Levi's",
+                        urlImg:"../assets/1.webp",
+                        priceDiscount: 14.99,
+                        oldPrice: 29.99,
+                        discount: "-50%",
+                        description: "RELAX FIT TEE UNISEX",
+                        sustainability: "Sostenibilità"
+                    },
+                    {
+                        brand: "Levi's",
+                        urlImg:"../assets/1.webp",
+                        priceDiscount: 14.99,
+                        oldPrice: 29.99,
+                        discount: "-50%",
+                        description: "RELAX FIT TEE UNISEX",
+                        sustainability: "Sostenibilità"
+                    },
+                    {
+                        brand: "Levi's",
+                        urlImg:"../assets/1.webp",
+                        priceDiscount: 14.99,
+                        oldPrice: 29.99,
+                        discount: "-50%",
+                        description: "RELAX FIT TEE UNISEX",
+                        sustainability: "Sostenibilità"
+                    },
+                    {
+                        brand: "Levi's",
+                        urlImg:"../assets/1.webp",
+                        priceDiscount: 14.99,
+                        oldPrice: 29.99,
+                        discount: "-50%",
+                        description: "RELAX FIT TEE UNISEX",
+                        sustainability: "Sostenibilità"
+                    },
+                    {
+                        brand: "Levi's",
+                        urlImg:"../assets/1.webp",
+                        priceDiscount: 14.99,
+                        oldPrice: 29.99,
+                        discount: "-50%",
+                        description: "RELAX FIT TEE UNISEX",
+                        sustainability: "Sostenibilità"
+                    },
+                    {
+                        brand: "Levi's",
+                        urlImg:"../assets/1.webp",
+                        priceDiscount: 14.99,
+                        oldPrice: 29.99,
+                        discount: "-50%",
+                        description: "RELAX FIT TEE UNISEX",
+                        sustainability: "Sostenibilità"
+                    }
+                ]
+            }
+        }
+    }
 </script>
 
 <template>
-    <div class="container debug">
+    <div class="container">
         <div class="row">
-            <div class="col-4">
+            <div v-for="dress in clothes" class="col-4">
                 <div class="card">
                     <div class="card-img">
                         <img src="../assets/1.webp" alt="">
                     </div>
                     <div class="card-footer">
-                        <div class="brand">Levis's</div>
-                        <p class="description">RELAX FIT TEE UNISEX</p>
-                        <span class="price-discount">14,99 &euro;</span>
-                        <span class="old-price">29,99 &euro;</span>
+                        <div class="brand">{{ dress.brand }}</div>
+                        <p class="description">{{ dress.description }}</p>
+                        <span class="price-discount">{{ dress.priceDiscount }}</span>
+                        <span class="old-price">{{ dress.oldPrice }} &euro;</span>
                     </div>
-                    <div class="button-discount">-50%</div>
-                    <div class="button-sustainability">Sostenibilità</div>
+                    <div class="button-discount">{{ dress.discount }}</div>
+                    <div class="button-sustainability">{{dress.sustainability}}</div>
                     <div class="button-heart">&hearts;</div>
                 </div>
             </div>
-            <div class="col-4">
-                <div class="card">
-                    <div class="card-img">
-                        <img src="../assets/1.webp" alt="">
-                    </div>
-                    <div class="card-footer">
-                        <div>Levis's</div>
-                        <p>RELAX FIT TEE UNISEX</p>
-                        <span>14,99 &euro;</span>
-                        <span>29,99 &euro;</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-4">
-                <div class="card">
-                    <div class="card-img">
-                        <img src="../assets/1.webp" alt="">
-                    </div>
-                    <div class="card-footer">
-                        <div>Levis's</div>
-                        <p>RELAX FIT TEE UNISEX</p>
-                        <span>14,99 &euro;</span>
-                        <span>29,99 &euro;</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-4">
-                <div class="card">
-                    <div class="card-img">
-                        <img src="../assets/1.webp" alt="">
-                    </div>
-                    <div class="card-footer">
-                        <div>Levis's</div>
-                        <p>RELAX FIT TEE UNISEX</p>
-                        <span>14,99 &euro;</span>
-                        <span>29,99 &euro;</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-4">
-                <div class="card">
-                    <div class="card-img">
-                        <img src="../assets/1.webp" alt="">
-                    </div>
-                    <div class="card-footer">
-                        <div>Levis's</div>
-                        <p>RELAX FIT TEE UNISEX</p>
-                        <span>14,99 &euro;</span>
-                        <span>29,99 &euro;</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-4">
-                <div class="card">
-                    <div class="card-img">
-                        <img src="../assets/1.webp" alt="">
-                    </div>
-                    <div class="card-footer">
-                        <div class="">Levis's</div>
-                        <p>RELAX FIT TEE UNISEX</p>
-                        <span>14,99 &euro;</span>
-                        <span>29,99 &euro;</span>
-                    </div>
-                </div>
-            </div>
-        </div>
+        </div> 
     </div>
 </template>
 
 <style lang="scss" scoped>
     @use '../style/partials/mixin' as *;
     @use '../style/partials/utilities' as *;
-
-    .container{
-        padding: 20px 0;
-    }
 
     .card{
         @include card
@@ -105,6 +97,7 @@
     .row{
         flex-wrap: wrap;
         margin: -5px;
+        padding: 20px 0;
     }
 
     .col-4{

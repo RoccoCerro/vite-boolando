@@ -20,7 +20,6 @@
 </script>
 
 <template>
-  <div class="container">
     <div class="row page">
       <header class="col page-header">
         <HeaderBoolando/>
@@ -32,7 +31,6 @@
         <FooterBoolando/>
       </footer>
     </div>
-  </div>
 </template>
 
 <style lang="scss">
