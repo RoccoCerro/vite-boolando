@@ -15,17 +15,17 @@ export default{
 </script>
 
 <template>
-    <div class="container">
+    <div class="container sidebar">
         <div class="row">
-            <div class="col">
+            <div class="col clothes">
                 <span>{{ uomo }}</span>
                 <span>{{ donna }}</span>
                 <span>{{ bambino }}</span>
             </div>
-            <div class="col">
+            <div class="col logo">
                 <img :src=logo alt="">
             </div>
-            <div class="col">
+            <div class="col connections">
                 <span>{{ user }}</span>
                 <span>{{ donna }}</span>
                 <span>{{ bambino }}</span>
@@ -38,6 +38,14 @@ export default{
     @use '../style/partials/mixin' as *;
 
     .row{
-        @include display-flex
+        @include display-flex;
+        height: 100%;
+    }
+
+    .container.sidebar{
+
+        span:not(:last-of-type){
+            padding-right: 10px;
+        }
     }
 </style>
