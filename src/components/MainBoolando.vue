@@ -5,57 +5,57 @@
                 clothes: [
                     {
                         brand: "Levi's",
-                        urlImg:"../assets/1.webp",
+                        image: "../assets/1.webp",
                         priceDiscount: 14.99,
                         oldPrice: 29.99,
                         discount: "-50%",
                         description: "RELAX FIT TEE UNISEX",
-                        sustainability: "Sostenibilità"
+                        sustainability: "Sostenibilità",
                     },
                     {
                         brand: "Levi's",
-                        urlImg:"../assets/1.webp",
+                        image: "../assets/1.webp",
                         priceDiscount: 14.99,
                         oldPrice: 29.99,
                         discount: "-50%",
                         description: "RELAX FIT TEE UNISEX",
-                        sustainability: "Sostenibilità"
+                        sustainability: "Sostenibilità",
                     },
                     {
                         brand: "Levi's",
-                        urlImg:"../assets/1.webp",
+                        image: "../assets/1.webp",
                         priceDiscount: 14.99,
                         oldPrice: 29.99,
                         discount: "-50%",
                         description: "RELAX FIT TEE UNISEX",
-                        sustainability: "Sostenibilità"
+                        sustainability: "Sostenibilità",
                     },
                     {
                         brand: "Levi's",
-                        urlImg:"../assets/1.webp",
+                        image: "../assets/1.webp",
                         priceDiscount: 14.99,
                         oldPrice: 29.99,
                         discount: "-50%",
                         description: "RELAX FIT TEE UNISEX",
-                        sustainability: "Sostenibilità"
+                        sustainability: "Sostenibilità",
                     },
                     {
                         brand: "Levi's",
-                        urlImg:"../assets/1.webp",
+                        image: "../assets/1.webp",
                         priceDiscount: 14.99,
                         oldPrice: 29.99,
                         discount: "-50%",
                         description: "RELAX FIT TEE UNISEX",
-                        sustainability: "Sostenibilità"
+                        sustainability: "Sostenibilità",
                     },
                     {
                         brand: "Levi's",
-                        urlImg:"../assets/1.webp",
+                        image: "../assets/1.webp",
                         priceDiscount: 14.99,
                         oldPrice: 29.99,
                         discount: "-50%",
                         description: "RELAX FIT TEE UNISEX",
-                        sustainability: "Sostenibilità"
+                        sustainability: "Sostenibilità",
                     }
                 ]
             }
@@ -69,7 +69,7 @@
             <div v-for="dress in clothes" class="col-4">
                 <div class="card">
                     <div class="card-img">
-                        <img src="../assets/1.webp" alt="">
+                        <img src="../assets/1.webp" alt="dress-img">
                     </div>
                     <div class="card-footer">
                         <div class="brand">{{ dress.brand }}</div>
