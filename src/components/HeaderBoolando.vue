@@ -43,6 +43,7 @@ export default{
     }
 
     .container.sidebar{
+        height: 100%;
 
         span:not(:last-of-type){
             padding-right: 10px;

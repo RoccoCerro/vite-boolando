@@ -6,6 +6,7 @@
                     {
                         brand: "Levi's",
                         image: "../assets/1.webp",
+                        imageHover: "../assets/1b.webp",
                         priceDiscount: 14.99,
                         oldPrice: 29.99,
                         discount: "-50%",
@@ -15,6 +16,7 @@
                     {
                         brand: "Levi's",
                         image: "../assets/1.webp",
+                        imageHover: "../assets/1b.webp",
                         priceDiscount: 14.99,
                         oldPrice: 29.99,
                         discount: "-50%",
@@ -24,6 +26,7 @@
                     {
                         brand: "Levi's",
                         image: "../assets/1.webp",
+                        imageHover: "../assets/1b.webp",
                         priceDiscount: 14.99,
                         oldPrice: 29.99,
                         discount: "-50%",
@@ -33,6 +36,7 @@
                     {
                         brand: "Levi's",
                         image: "../assets/1.webp",
+                        imageHover: "../assets/1b.webp",
                         priceDiscount: 14.99,
                         oldPrice: 29.99,
                         discount: "-50%",
@@ -42,6 +46,7 @@
                     {
                         brand: "Levi's",
                         image: "../assets/1.webp",
+                        imageHover: "../assets/1b.webp",
                         priceDiscount: 14.99,
                         oldPrice: 29.99,
                         discount: "-50%",
@@ -51,6 +56,7 @@
                     {
                         brand: "Levi's",
                         image: "../assets/1.webp",
+                        imageHover: "../assets/1b.webp",
                         priceDiscount: 14.99,
                         oldPrice: 29.99,
                         discount: "-50%",
@@ -75,6 +81,9 @@
                 <div class="card">
                     <div class="card-img">
                         <img :src="getImagePath(dress.image)" alt="dress-img">
+                        <div class="img_hover">
+                            <img :src="getImagePath(dress.imageHover)" alt="">
+                        </div>
                     </div>
                     <div class="card-footer">
                         <div class="brand">{{ dress.brand }}</div>
@@ -157,5 +166,16 @@
         top: 5px;
         line-height: 30px;
         right: 0px;
+    }
+
+    .img_hover{
+        opacity: 0;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+    .img_hover:hover{
+        opacity: 1;
     }
 </style>

@@ -44,8 +44,7 @@
 
   .col.page-header{
     background-color: $header-background-color;
-    height: 100%;
-    min-height: 50px;
+    min-height: 60px;
   }
 
   .col.page-main{
@@ -55,7 +54,7 @@
   .col.page-footer{
     background-color: $footer-background-color;
     color: white;
-    height: 100%;
+    min-height: 60px;
   }
 
 </style>

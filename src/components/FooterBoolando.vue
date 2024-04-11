@@ -37,6 +37,12 @@
     }
 
     .container.conclusion{
+        height: 100%;
+
+        .row{
+            height: 100%;
+        }
+
         ul{
             display: flex;
             gap: 7px;
