@@ -15,8 +15,8 @@
                     },
                     {
                         brand: "Levi's",
-                        image: "../assets/1.webp",
-                        imageHover: "../assets/1b.webp",
+                        image: "../assets/2.webp",
+                        imageHover: "../assets/2b.webp",
                         priceDiscount: 14.99,
                         oldPrice: 29.99,
                         discount: "-50%",
@@ -25,8 +25,8 @@
                     },
                     {
                         brand: "Levi's",
-                        image: "../assets/1.webp",
-                        imageHover: "../assets/1b.webp",
+                        image: "../assets/3.webp",
+                        imageHover: "../assets/3b.webp",
                         priceDiscount: 14.99,
                         oldPrice: 29.99,
                         discount: "-50%",
@@ -35,8 +35,8 @@
                     },
                     {
                         brand: "Levi's",
-                        image: "../assets/1.webp",
-                        imageHover: "../assets/1b.webp",
+                        image: "../assets/4.webp",
+                        imageHover: "../assets/4b.webp",
                         priceDiscount: 14.99,
                         oldPrice: 29.99,
                         discount: "-50%",
@@ -45,8 +45,8 @@
                     },
                     {
                         brand: "Levi's",
-                        image: "../assets/1.webp",
-                        imageHover: "../assets/1b.webp",
+                        image: "../assets/5.webp",
+                        imageHover: "../assets/5b.webp",
                         priceDiscount: 14.99,
                         oldPrice: 29.99,
                         discount: "-50%",
@@ -55,8 +55,8 @@
                     },
                     {
                         brand: "Levi's",
-                        image: "../assets/1.webp",
-                        imageHover: "../assets/1b.webp",
+                        image: "../assets/6.webp",
+                        imageHover: "../assets/6b.webp",
                         priceDiscount: 14.99,
                         oldPrice: 29.99,
                         discount: "-50%",
@@ -81,9 +81,7 @@
                 <div class="card">
                     <div class="card-img">
                         <img :src="getImagePath(dress.image)" alt="dress-img">
-                        <div class="img_hover">
-                            <img :src="getImagePath(dress.imageHover)" alt="">
-                        </div>
+                        <img class="img_hover" :src="getImagePath(dress.imageHover)" alt="">
                     </div>
                     <div class="card-footer">
                         <div class="brand">{{ dress.brand }}</div>
@@ -105,7 +103,8 @@
     @use '../style/partials/utilities' as *;
 
     .card{
-        @include card
+        @include card;
+        position: relative;
     }
 
     .row{
@@ -115,7 +114,6 @@
     }
 
     .col-4{
-        position: relative;
         padding: 10px 5px;
     }
 
@@ -171,11 +169,13 @@
     .img_hover{
         opacity: 0;
         position: absolute;
-        left: 0;
-        top: 0;
+        left: 0px;
+        top: 0px;
+
+        &.img_hover:hover{
+        opacity: 1;
+        }
     }
 
-    .img_hover:hover{
-        opacity: 1;
-    }
+    
 </style>

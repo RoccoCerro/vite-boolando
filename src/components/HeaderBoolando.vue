@@ -2,13 +2,29 @@
 export default{
     data(){
         return{
-            uomo: "Uomo",
-            donna: "Donna",
-            bambino: "Bambino",
+            links: [
+                {
+                    text: 'Uomo',
+                    href: '#'
+                },
+                {
+                    text: 'Donna',
+                    href: '#'
+                },
+                {
+                    text: 'Bambini',
+                    href: '#'
+                },
+            ],
             logo: '../assets/boolean-logo.png',
             user: '<i class="fa-solid fa-user"></i>',
             heart: '<i class="fa-regular fa-heart"></i>',
             bag: '<i class="fa-solid fa-bag-shopping"></i>'
+        }
+    },
+    methods: {
+        getImagePath: function(img) {
+            return new URL(`${img}`, import.meta.url).href
         }
     }
 }
@@ -17,18 +33,16 @@ export default{
 <template>
     <div class="container sidebar">
         <div class="row">
-            <div class="col clothes">
-                <span>{{ uomo }}</span>
-                <span>{{ donna }}</span>
-                <span>{{ bambino }}</span>
-            </div>
+            <ul class="col clothes display-flex">
+                <li v-for="link in links">{{ link.text }}</li>
+            </ul>
             <div class="col logo">
-                <img :src=logo alt="">
+                <img :src="getImagePath(logo)" alt="">
             </div>
             <div class="col connections">
-                <span>{{ user }}</span>
-                <span>{{ donna }}</span>
-                <span>{{ bambino }}</span>
+                <span v-html="user"></span>
+                <span v-html="heart"></span>
+                <span v-html="bag"></span>
             </div>
         </div>
     </div>
@@ -45,8 +59,15 @@ export default{
     .container.sidebar{
         height: 100%;
 
-        span:not(:last-of-type){
+        span:not(:last-of-type), li{
             padding-right: 10px;
+        }
+    }
+
+    .col.logo{
+
+        img{
+            max-width: 100px;
         }
     }
 </style>

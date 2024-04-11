@@ -39,7 +39,6 @@
 
   .row.page{
     flex-direction: column;
-    height: 100vh;
   }
 
   .col.page-header{
