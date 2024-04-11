@@ -1,71 +1,73 @@
 <script>
 import ProductBoolando from "./ProductBoolando.vue"
+import DataProducts from "../assets/db.json"
 
 export default {
     data() {
         return {
-            clothes: [
-                {
-                    brand: "Levi's",
-                    image: "../assets/1.webp",
-                    imageHover: "../assets/1b.webp",
-                    priceDiscount: 14.99,
-                    oldPrice: 29.99,
-                    discount: "-50%",
-                    description: "RELAX FIT TEE UNISEX",
-                    sustainability: "Sostenibilità",
-                },
-                {
-                    brand: "Levi's",
-                    image: "../assets/2.webp",
-                    imageHover: "../assets/2b.webp",
-                    priceDiscount: 14.99,
-                    oldPrice: 29.99,
-                    discount: "-50%",
-                    description: "RELAX FIT TEE UNISEX",
-                    sustainability: "Sostenibilità",
-                },
-                {
-                    brand: "Levi's",
-                    image: "../assets/3.webp",
-                    imageHover: "../assets/3b.webp",
-                    priceDiscount: 14.99,
-                    oldPrice: 29.99,
-                    discount: "-50%",
-                    description: "RELAX FIT TEE UNISEX",
-                    sustainability: "Sostenibilità",
-                },
-                {
-                    brand: "Levi's",
-                    image: "../assets/4.webp",
-                    imageHover: "../assets/4b.webp",
-                    priceDiscount: 14.99,
-                    oldPrice: 29.99,
-                    discount: "-50%",
-                    description: "RELAX FIT TEE UNISEX",
-                    sustainability: "Sostenibilità",
-                },
-                {
-                    brand: "Levi's",
-                    image: "../assets/5.webp",
-                    imageHover: "../assets/5b.webp",
-                    priceDiscount: 14.99,
-                    oldPrice: 29.99,
-                    discount: "-50%",
-                    description: "RELAX FIT TEE UNISEX",
-                    sustainability: "Sostenibilità",
-                },
-                {
-                    brand: "Levi's",
-                    image: "../assets/6.webp",
-                    imageHover: "../assets/6b.webp",
-                    priceDiscount: 14.99,
-                    oldPrice: 29.99,
-                    discount: "-50%",
-                    description: "RELAX FIT TEE UNISEX",
-                    sustainability: "Sostenibilità",
-                }
-            ]
+            clothes: DataProducts.products,
+            // clothes: [
+            //     {
+            //         brand: "Levi's",
+            //         image: "../assets/1.webp",
+            //         imageHover: "../assets/1b.webp",
+            //         priceDiscount: 14.99,
+            //         oldPrice: 29.99,
+            //         discount: "-50%",
+            //         description: "RELAX FIT TEE UNISEX",
+            //         sustainability: "Sostenibilità",
+            //     },
+            //     {
+            //         brand: "Levi's",
+            //         image: "../assets/2.webp",
+            //         imageHover: "../assets/2b.webp",
+            //         priceDiscount: 14.99,
+            //         oldPrice: 29.99,
+            //         discount: "-50%",
+            //         description: "RELAX FIT TEE UNISEX",
+            //         sustainability: "Sostenibilità",
+            //     },
+            //     {
+            //         brand: "Levi's",
+            //         image: "../assets/3.webp",
+            //         imageHover: "../assets/3b.webp",
+            //         priceDiscount: 14.99,
+            //         oldPrice: 29.99,
+            //         discount: "-50%",
+            //         description: "RELAX FIT TEE UNISEX",
+            //         sustainability: "Sostenibilità",
+            //     },
+            //     {
+            //         brand: "Levi's",
+            //         image: "../assets/4.webp",
+            //         imageHover: "../assets/4b.webp",
+            //         priceDiscount: 14.99,
+            //         oldPrice: 29.99,
+            //         discount: "-50%",
+            //         description: "RELAX FIT TEE UNISEX",
+            //         sustainability: "Sostenibilità",
+            //     },
+            //     {
+            //         brand: "Levi's",
+            //         image: "../assets/5.webp",
+            //         imageHover: "../assets/5b.webp",
+            //         priceDiscount: 14.99,
+            //         oldPrice: 29.99,
+            //         discount: "-50%",
+            //         description: "RELAX FIT TEE UNISEX",
+            //         sustainability: "Sostenibilità",
+            //     },
+            //     {
+            //         brand: "Levi's",
+            //         image: "../assets/6.webp",
+            //         imageHover: "../assets/6b.webp",
+            //         priceDiscount: 14.99,
+            //         oldPrice: 29.99,
+            //         discount: "-50%",
+            //         description: "RELAX FIT TEE UNISEX",
+            //         sustainability: "Sostenibilità",
+            //     }
+            // ]
         }
     },
     methods: {

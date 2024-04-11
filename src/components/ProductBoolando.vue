@@ -3,7 +3,7 @@ export default {
     props: ["products"],
     methods: {
         getImagePath: function (img) {
-            return new URL(`${img}`, import.meta.url).href
+            return new URL(`../assets/${img}`, import.meta.url).href
         }
     }
 }
@@ -13,17 +13,21 @@ export default {
     <div class="col-4">
         <div class="card">
             <div class="card-img">
-                <img :src="getImagePath(products.image)" alt="dress-img">
-                <img class="img_hover" :src="getImagePath(products.imageHover)" alt="">
+                <img :src="getImagePath(products.frontImage)" alt="dress-img">
+                <img class="img_hover" :src="getImagePath(products.backImage)" alt="">
             </div>
             <div class="card-footer">
                 <div class="brand">{{ products.brand }}</div>
-                <p class="description">{{ products.description }}</p>
-                <span class="price-discount">{{ products.priceDiscount }}</span>
-                <span class="old-price">{{ products.oldPrice }} &euro;</span>
+                <p class="description">{{ products.name }}</p>
+                <span class="price-discount">{{ 50 * (products.price / 100) }}</span>
+                <span class="old-price">{{ products.price }} &euro;</span>
             </div>
-            <div class="button-discount">{{ products.discount }}</div>
-            <div class="button-sustainability">{{ products.sustainability }}</div>
+            <div v-if="products.badges[products.badges.length - 1].type === 'discount'" class="button-discount">
+                {{ products.badges[products.badges.length - 1].value }}
+            </div>
+            <div v-if="products.badges[0].type === 'tag'" class="button-sustainability">
+                {{ products.badges[0].value }}
+            </div>
             <div class="button-heart">&hearts;</div>
         </div>
     </div>
