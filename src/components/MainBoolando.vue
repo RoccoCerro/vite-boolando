@@ -59,6 +59,11 @@
                     }
                 ]
             }
+        },
+        methods: {
+            getImagePath: function(img) {
+                return new URL(`${img}`, import.meta.url).href
+            }
         }
     }
 </script>
@@ -69,7 +74,7 @@
             <div v-for="dress in clothes" class="col-4">
                 <div class="card">
                     <div class="card-img">
-                        <img src="../assets/1.webp" alt="dress-img">
+                        <img :src="getImagePath(dress.image)" alt="dress-img">
                     </div>
                     <div class="card-footer">
                         <div class="brand">{{ dress.brand }}</div>
