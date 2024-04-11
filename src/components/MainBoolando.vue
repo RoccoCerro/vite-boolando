@@ -1,181 +1,99 @@
 <script>
-    export default{
-        data(){
-            return{
-                clothes: [
-                    {
-                        brand: "Levi's",
-                        image: "../assets/1.webp",
-                        imageHover: "../assets/1b.webp",
-                        priceDiscount: 14.99,
-                        oldPrice: 29.99,
-                        discount: "-50%",
-                        description: "RELAX FIT TEE UNISEX",
-                        sustainability: "Sostenibilità",
-                    },
-                    {
-                        brand: "Levi's",
-                        image: "../assets/2.webp",
-                        imageHover: "../assets/2b.webp",
-                        priceDiscount: 14.99,
-                        oldPrice: 29.99,
-                        discount: "-50%",
-                        description: "RELAX FIT TEE UNISEX",
-                        sustainability: "Sostenibilità",
-                    },
-                    {
-                        brand: "Levi's",
-                        image: "../assets/3.webp",
-                        imageHover: "../assets/3b.webp",
-                        priceDiscount: 14.99,
-                        oldPrice: 29.99,
-                        discount: "-50%",
-                        description: "RELAX FIT TEE UNISEX",
-                        sustainability: "Sostenibilità",
-                    },
-                    {
-                        brand: "Levi's",
-                        image: "../assets/4.webp",
-                        imageHover: "../assets/4b.webp",
-                        priceDiscount: 14.99,
-                        oldPrice: 29.99,
-                        discount: "-50%",
-                        description: "RELAX FIT TEE UNISEX",
-                        sustainability: "Sostenibilità",
-                    },
-                    {
-                        brand: "Levi's",
-                        image: "../assets/5.webp",
-                        imageHover: "../assets/5b.webp",
-                        priceDiscount: 14.99,
-                        oldPrice: 29.99,
-                        discount: "-50%",
-                        description: "RELAX FIT TEE UNISEX",
-                        sustainability: "Sostenibilità",
-                    },
-                    {
-                        brand: "Levi's",
-                        image: "../assets/6.webp",
-                        imageHover: "../assets/6b.webp",
-                        priceDiscount: 14.99,
-                        oldPrice: 29.99,
-                        discount: "-50%",
-                        description: "RELAX FIT TEE UNISEX",
-                        sustainability: "Sostenibilità",
-                    }
-                ]
-            }
-        },
-        methods: {
-            getImagePath: function(img) {
-                return new URL(`${img}`, import.meta.url).href
-            }
+import ProductBoolando from "./ProductBoolando.vue"
+
+export default {
+    data() {
+        return {
+            clothes: [
+                {
+                    brand: "Levi's",
+                    image: "../assets/1.webp",
+                    imageHover: "../assets/1b.webp",
+                    priceDiscount: 14.99,
+                    oldPrice: 29.99,
+                    discount: "-50%",
+                    description: "RELAX FIT TEE UNISEX",
+                    sustainability: "Sostenibilità",
+                },
+                {
+                    brand: "Levi's",
+                    image: "../assets/2.webp",
+                    imageHover: "../assets/2b.webp",
+                    priceDiscount: 14.99,
+                    oldPrice: 29.99,
+                    discount: "-50%",
+                    description: "RELAX FIT TEE UNISEX",
+                    sustainability: "Sostenibilità",
+                },
+                {
+                    brand: "Levi's",
+                    image: "../assets/3.webp",
+                    imageHover: "../assets/3b.webp",
+                    priceDiscount: 14.99,
+                    oldPrice: 29.99,
+                    discount: "-50%",
+                    description: "RELAX FIT TEE UNISEX",
+                    sustainability: "Sostenibilità",
+                },
+                {
+                    brand: "Levi's",
+                    image: "../assets/4.webp",
+                    imageHover: "../assets/4b.webp",
+                    priceDiscount: 14.99,
+                    oldPrice: 29.99,
+                    discount: "-50%",
+                    description: "RELAX FIT TEE UNISEX",
+                    sustainability: "Sostenibilità",
+                },
+                {
+                    brand: "Levi's",
+                    image: "../assets/5.webp",
+                    imageHover: "../assets/5b.webp",
+                    priceDiscount: 14.99,
+                    oldPrice: 29.99,
+                    discount: "-50%",
+                    description: "RELAX FIT TEE UNISEX",
+                    sustainability: "Sostenibilità",
+                },
+                {
+                    brand: "Levi's",
+                    image: "../assets/6.webp",
+                    imageHover: "../assets/6b.webp",
+                    priceDiscount: 14.99,
+                    oldPrice: 29.99,
+                    discount: "-50%",
+                    description: "RELAX FIT TEE UNISEX",
+                    sustainability: "Sostenibilità",
+                }
+            ]
         }
+    },
+    methods: {
+        getImagePath: function (img) {
+            return new URL(`${img}`, import.meta.url).href
+        }
+    },
+    components: {
+        ProductBoolando
     }
+}
 </script>
 
 <template>
     <div class="container">
         <div class="row">
-            <div v-for="dress in clothes" class="col-4">
-                <div class="card">
-                    <div class="card-img">
-                        <img :src="getImagePath(dress.image)" alt="dress-img">
-                        <img class="img_hover" :src="getImagePath(dress.imageHover)" alt="">
-                    </div>
-                    <div class="card-footer">
-                        <div class="brand">{{ dress.brand }}</div>
-                        <p class="description">{{ dress.description }}</p>
-                        <span class="price-discount">{{ dress.priceDiscount }}</span>
-                        <span class="old-price">{{ dress.oldPrice }} &euro;</span>
-                    </div>
-                    <div class="button-discount">{{ dress.discount }}</div>
-                    <div class="button-sustainability">{{dress.sustainability}}</div>
-                    <div class="button-heart">&hearts;</div>
-                </div>
-            </div>
-        </div> 
+            <ProductBoolando v-for="dress in clothes" :products="dress" />
+        </div>
     </div>
 </template>
 
 <style lang="scss" scoped>
-    @use '../style/partials/mixin' as *;
-    @use '../style/partials/utilities' as *;
+@use '../style/partials/mixin' as *;
+@use '../style/partials/utilities' as *;
 
-    .card{
-        @include card;
-        position: relative;
-    }
-
-    .row{
-        flex-wrap: wrap;
-        margin: -5px;
-        padding: 20px 0;
-    }
-
-    .col-4{
-        padding: 10px 5px;
-    }
-
-    .card-footer{
-        .brand{
-            font-size: $font-size-brand-and-price;
-            color: rgba(0, 0, 0, 0.788);
-        }
-        .description,.price-discount{
-            font-weight: bold;
-        }
-        .price-discount{
-            color: $color-discount;
-            padding-right: 5px;
-        }
-        .old-price{
-            text-decoration: line-through;
-        }
-    } 
-
-    .button-discount,.button-sustainability,.button-heart{
-        position: absolute;
-        text-align: center;
-    }
-
-    .button-discount,.button-sustainability{
-        color: white;
-        padding: 3px 10px;
-    }
-    
-    .button-discount{
-        background-color: $color-discount;
-        bottom: 80px;
-        left: 5px;
-    }
-    
-    .button-sustainability{
-        background-color: $color-button-sustainability;
-        bottom: 80px;
-        left: 65px;
-    }
-
-    .button-heart{
-        background-color: white;
-        width: 30px;
-        font-size: 25px;
-        aspect-ratio: 1/1;
-        top: 5px;
-        line-height: 30px;
-        right: 0px;
-    }
-
-    .img_hover{
-        opacity: 0;
-        position: absolute;
-        left: 0px;
-        top: 0px;
-
-        &.img_hover:hover{
-        opacity: 1;
-        }
-    }
-
-    
+.row {
+    flex-wrap: wrap;
+    margin: -5px;
+    padding: 20px 0;
+}
 </style>
