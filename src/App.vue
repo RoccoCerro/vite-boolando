@@ -36,25 +36,4 @@
 <style lang="scss">
   @use './style/general.scss';
   @use './style/partials/utilities.scss' as *;
-
-  .row.page{
-    flex-direction: column;
-  }
-
-  .col.page-header{
-    background-color: $header-background-color;
-    min-height: 60px;
-    color: white;
-  }
-
-  .col.page-main{
-    flex-grow: 1;
-  }
-
-  .col.page-footer{
-    background-color: $footer-background-color;
-    color: white;
-    min-height: 60px;
-  }
-
 </style>
