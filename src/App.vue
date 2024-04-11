@@ -44,6 +44,7 @@
   .col.page-header{
     background-color: $header-background-color;
     min-height: 60px;
+    color: white;
   }
 
   .col.page-main{

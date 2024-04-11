@@ -40,7 +40,7 @@ export default{
                 <img :src="getImagePath(logo)" alt="">
             </div>
             <div class="col connections">
-                <span v-html="user"></span>
+                <span><i class="fa-solid fa-user"></i></span>
                 <span v-html="heart"></span>
                 <span v-html="bag"></span>
             </div>
@@ -50,18 +50,18 @@ export default{
 
 <style lang="scss" scoped>
     @use '../style/partials/mixin' as *;
-
-    .row{
-        @include display-flex;
-        height: 100%;
-    }
-
+    
     .container.sidebar{
-        height: 100%;
-
+        height: 60px;
+        
         span:not(:last-of-type), li{
             padding-right: 10px;
         }
+    }
+    
+    .row{
+        @include display-flex;
+        height: 100%;
     }
 
     .col.logo{

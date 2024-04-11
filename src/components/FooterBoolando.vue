@@ -17,13 +17,23 @@
             </div>
             <div class="col social">
                 <h3>Trovaci anche su</h3>
-                <ul>
-                    <li>77</li>
-                    <li>77</li>
-                    <li>77</li>
-                    <li>77</li>
-                    <li>77</li>
-                </ul>
+                <ul class="row social">
+                    <li>
+                        <a href="#" class="fa fa-twitter"></a>
+                    </li>
+                    <li>
+                        <a href="#" class="fa fa-facebook"></a>
+                    </li>
+                    <li>
+                        <a href="#" class="fa fa-instagram"></a>
+                    </li>
+                    <li>
+                        <a href="#" class="fa fa-pinterest"></a>
+                    </li>
+                    <li>
+                        <a href="#" class="fa fa-youtube"></a>
+                    </li>
+                </ul>     
             </div>
         </div>
     </div>
@@ -31,16 +41,13 @@
  
 <style lang="scss" scoped>
     @use '../style/partials/mixin' as *;
-    
-    .row{
-        @include display-flex
-    }
 
     .container.conclusion{
-        height: 100%;
+        height: 60px;
 
         .row{
             height: 100%;
+            @include display-flex
         }
 
         ul{
