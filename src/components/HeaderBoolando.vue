@@ -1,7 +1,7 @@
 <script>
-export default{
-    data(){
-        return{
+export default {
+    data() {
+        return {
             links: [
                 {
                     text: 'Uomo',
@@ -17,13 +17,13 @@ export default{
                 },
             ],
             logo: '../assets/boolean-logo.png',
-            user: '<i class="fa-solid fa-user"></i>',
-            heart: '<i class="fa-regular fa-heart"></i>',
-            bag: '<i class="fa-solid fa-bag-shopping"></i>'
+            user: '<i class="fa fa-solid fa-user"></i>',
+            heart: '<i class="fa fa-heart"></i>',
+            bag: '<i class="fa-solid fa-bag-shopping"></i>',
         }
     },
     methods: {
-        getImagePath: function(img) {
+        getImagePath: function (img) {
             return new URL(`${img}`, import.meta.url).href
         }
     }
@@ -40,7 +40,7 @@ export default{
                 <img :src="getImagePath(logo)" alt="">
             </div>
             <div class="col connections">
-                <span><i class="fa-solid fa-user"></i></span>
+                <span v-html="user"></span>
                 <span v-html="heart"></span>
                 <span v-html="bag"></span>
             </div>
@@ -49,25 +49,26 @@ export default{
 </template>
 
 <style lang="scss" scoped>
-    @use '../style/partials/mixin' as *;
-    
-    .container.sidebar{
-        height: 60px;
-        
-        span:not(:last-of-type), li{
-            padding-right: 10px;
-        }
-    }
-    
-    .row{
-        @include display-flex;
-        height: 100%;
-    }
+@use '../style/partials/mixin' as *;
 
-    .col.logo{
+.container.sidebar {
+    height: 60px;
 
-        img{
-            max-width: 100px;
-        }
+    span:not(:last-of-type),
+    li {
+        padding-right: 10px;
     }
+}
+
+.row {
+    @include display-flex;
+    height: 100%;
+}
+
+.col.logo {
+
+    img {
+        max-width: 100px;
+    }
+}
 </style>

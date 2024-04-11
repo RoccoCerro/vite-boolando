@@ -22,11 +22,11 @@ export default {
                 <span class="price-discount">{{ 50 * (products.price / 100) }}</span>
                 <span class="old-price">{{ products.price }} &euro;</span>
             </div>
-            <div v-if="products.badges[products.badges.length - 1].type === 'discount'" class="button-discount">
-                {{ products.badges[products.badges.length - 1].value }}
-            </div>
-            <div v-if="products.badges[0].type === 'tag'" class="button-sustainability">
-                {{ products.badges[0].value }}
+            <div class="button-dinamic display-flex">
+                <div v-for="badge in products.badges"
+                    :class="badge.value === 'Sostenibilità' ? 'background-green' : 'background-red'">
+                    {{ badge.value }}
+                </div>
             </div>
             <div class="button-heart">&hearts;</div>
         </div>
@@ -67,23 +67,23 @@ export default {
     }
 }
 
-.button-discount,
+.button-dinamic,
 .button-sustainability,
 .button-heart {
     position: absolute;
     text-align: center;
 }
 
-.button-discount,
+.button-dinamic,
 .button-sustainability {
     color: white;
     padding: 3px 10px;
 }
 
-.button-discount {
-    background-color: $color-discount;
+.button-dinamic {
     bottom: 80px;
-    left: 5px;
+    left: 0px;
+    gap: 5px;
 }
 
 .button-sustainability {
@@ -111,5 +111,13 @@ export default {
     &.img_hover:hover {
         opacity: 1;
     }
+}
+
+.background-red {
+    background-color: red;
+}
+
+.background-green {
+    background-color: green;
 }
 </style>
