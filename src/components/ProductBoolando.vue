@@ -4,6 +4,9 @@ export default {
     methods: {
         getImagePath: function (img) {
             return new URL(`../assets/${img}`, import.meta.url).href
+        },
+        isFavorites() {
+            this.products.isInFavorites = !this.products.isInFavorites
         }
     }
 }
@@ -28,7 +31,9 @@ export default {
                     {{ badge.value }}
                 </div>
             </div>
-            <div class="button-heart">&hearts;</div>
+            <div @click="isFavorites" class="button-heart">
+                <i :class="products.isInFavorites === true ? 'color-red' : ''" class="fa fa-solid fa-heart"></i>
+            </div>
         </div>
     </div>
 </template>
@@ -68,28 +73,23 @@ export default {
 }
 
 .button-dinamic,
-.button-sustainability,
 .button-heart {
     position: absolute;
     text-align: center;
 }
 
-.button-dinamic,
-.button-sustainability {
-    color: white;
-    padding: 3px 10px;
+.button-dinamic {
+
+    div {
+        color: white;
+        padding: 3px 10px;
+    }
 }
 
 .button-dinamic {
     bottom: 80px;
     left: 0px;
     gap: 5px;
-}
-
-.button-sustainability {
-    background-color: $color-button-sustainability;
-    bottom: 80px;
-    left: 65px;
 }
 
 .button-heart {
@@ -111,13 +111,5 @@ export default {
     &.img_hover:hover {
         opacity: 1;
     }
-}
-
-.background-red {
-    background-color: red;
-}
-
-.background-green {
-    background-color: green;
 }
 </style>
