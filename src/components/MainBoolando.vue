@@ -24,7 +24,9 @@ export default {
 <template>
     <div class="container">
         <div class="row">
-            <ProductBoolando v-for="dress in stores.clothes" :products="dress" />
+            <div class="col-4" v-for="dress in stores.clothes">
+                <ProductBoolando :products="dress" />
+            </div>
         </div>
     </div>
 </template>
@@ -37,5 +39,9 @@ export default {
     flex-wrap: wrap;
     margin: -5px;
     padding: 20px 0;
+}
+
+.col-4 {
+    padding: 10px 5px;
 }
 </style>

@@ -62,24 +62,22 @@ export default {
 </script>
 
 <template>
-    <div class="col-4">
-        <div class="card">
-            <div class="card-img">
-                <img :src="getImagePath(products.frontImage)" alt="dress-img">
-                <img class="img_hover" :src="getImagePath(products.backImage)" alt="">
-            </div>
-            <div class="card-footer">
-                <div class="brand">{{ products.brand }}</div>
-                <p class="description">{{ products.name }}</p>
-                <!-- <span class="price-discount">{{ priceDisc }}</span> -->
-                <span class="old-price">{{ products.price }} &euro;</span>
-            </div>
-            <div class="button-dinamic display-flex">
-                <BadgesBoolando v-for="badge in products.badges" :text="badge.value" :type="badge.type" />
-            </div>
-            <div @click="isFavorites" class="button-heart">
-                <i :class="products.isInFavorites === true ? 'color-red' : ''" class="fa fa-solid fa-heart"></i>
-            </div>
+    <div class="card">
+        <div class="card-img">
+            <img :src="getImagePath(products.frontImage)" alt="dress-img">
+            <img class="img_hover" :src="getImagePath(products.backImage)" alt="">
+        </div>
+        <div class="card-footer">
+            <div class="brand">{{ products.brand }}</div>
+            <p class="description">{{ products.name }}</p>
+            <!-- <span class="price-discount">{{ priceDisc }}</span> -->
+            <span class="old-price">{{ products.price }} &euro;</span>
+        </div>
+        <div class="button-dinamic display-flex">
+            <BadgesBoolando v-for="badge in products.badges" :text="badge.value" :type="badge.type" />
+        </div>
+        <div @click="isFavorites" class="button-heart">
+            <i :class="products.isInFavorites === true ? 'color-red' : ''" class="fa fa-solid fa-heart"></i>
         </div>
     </div>
 </template>
@@ -91,10 +89,6 @@ export default {
 .card {
     @include card;
     position: relative;
-}
-
-.col-4 {
-    padding: 10px 5px;
 }
 
 .card-footer {
