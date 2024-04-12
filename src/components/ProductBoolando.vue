@@ -22,8 +22,8 @@ export default {
             for (let i = 0; i < this.product.badges.length; i++) {
                 let el = this.product.badges[i];
                 if (el.type.includes("discount")) {
-                    console.log("ciao")
-                    this.priceDisc = (el.value.slice(1, 3) * this.product.price / 100).toFixed(2)
+                    const discount = (el.value.slice(1, 3) * this.product.price / 100)
+                    this.priceDisc = (this.product.price - discount).toFixed(2)
                 }
             }
         }
