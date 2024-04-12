@@ -1,5 +1,6 @@
 <script>
 export default {
+    priceDisc: null,
     props: ["products"],
     methods: {
         getImagePath: function (img) {
@@ -7,8 +8,51 @@ export default {
         },
         isFavorites() {
             this.products.isInFavorites = !this.products.isInFavorites
-        }
-    }
+        },
+        // priceDiscount() {
+        //     for (let i = 0; i < products.badges.length; i++) {
+        //         let el = products.badges[i];
+        //         if (el.includes("discount")) {
+        //             this.priceDisc = products.badges[i] * products.price / 100
+        //         }
+        //     }
+        // }
+        // priceDiscount() {
+        //     for (let i = 0; i < this.products.badges.length; i++) {
+        //         let el = this.products.badges[i];
+        //         if (el.type.includes("discount")) {
+        //             this.priceDisc = this.products.badges[i] * this.products.price / 100
+        //         }
+
+        //         return priceDisc
+        //     }
+        // }
+    },
+    // computed: {
+    //     priceDiscount() {
+    //         for (let i = 0; i < this.products.badges.length; i++) {
+    //             let el = this.products.badges[i];
+    //             if (el.type.includes("discount")) {
+    //                 this.priceDisc = this.products.badges[i] * this.products.price / 100
+    //             }
+
+    //             return priceDisc
+    //         }
+    //     }
+    // }
+    // mounted() {
+    //     priceDiscount() {
+    //         for (let i = 0; i < products.badges.length; i++) {
+    //             let el = products.badges[i];
+    //             if (el.type.includes("discount")) {
+    //                 this.priceDisc = products.badges[i] * products.price / 100
+    //             }
+    //         }
+    //     }
+    // }
+    // created() {
+    //     this.priceDiscount()
+    // }
 }
 </script>
 
@@ -22,7 +66,7 @@ export default {
             <div class="card-footer">
                 <div class="brand">{{ products.brand }}</div>
                 <p class="description">{{ products.name }}</p>
-                <span class="price-discount">{{ 50 * (products.price / 100) }}</span>
+                <!-- <span class="price-discount">{{ priceDisc }}</span> -->
                 <span class="old-price">{{ products.price }} &euro;</span>
             </div>
             <div class="button-dinamic display-flex">

@@ -1,10 +1,12 @@
 <script>
 import ProductBoolando from "./ProductBoolando.vue"
 import DataProducts from "../assets/db.json"
+import { store } from '../store.js'
 
 export default {
     data() {
         return {
+            stores: store,
             clothes: DataProducts.products,
         }
     },
@@ -22,7 +24,7 @@ export default {
 <template>
     <div class="container">
         <div class="row">
-            <ProductBoolando v-for="dress in clothes" :products="dress" />
+            <ProductBoolando v-for="dress in stores.clothes" :products="dress" />
         </div>
     </div>
 </template>
