@@ -75,7 +75,7 @@ export default {
                 <span class="old-price">{{ products.price }} &euro;</span>
             </div>
             <div class="button-dinamic display-flex">
-                <BadgesBoolando v-for="badge in products.badges" :text="badge.value" />
+                <BadgesBoolando v-for="badge in products.badges" :text="badge.value" :type="badge.type" />
             </div>
             <div @click="isFavorites" class="button-heart">
                 <i :class="products.isInFavorites === true ? 'color-red' : ''" class="fa fa-solid fa-heart"></i>
