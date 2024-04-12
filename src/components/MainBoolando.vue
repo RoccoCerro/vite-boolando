@@ -7,7 +7,6 @@ export default {
     data() {
         return {
             stores: store,
-            clothes: DataProducts.products,
         }
     },
     methods: {
@@ -25,7 +24,7 @@ export default {
     <div class="container">
         <div class="row">
             <div class="col-4" v-for="dress in stores.clothes">
-                <ProductBoolando :products="dress" />
+                <ProductBoolando :product="dress" />
             </div>
         </div>
     </div>

@@ -2,8 +2,8 @@
 import BadgesBoolando from "./BadgesBoolando.vue"
 
 export default {
-    priceDisc: null,
-    props: ["products"],
+    priceDisc: 0,
+    props: ["product"],
     components: {
         BadgesBoolando
     },
@@ -12,50 +12,18 @@ export default {
             return new URL(`../assets/${img}`, import.meta.url).href
         },
         isFavorites() {
-            this.products.isInFavorites = !this.products.isInFavorites
+            this.product.isInFavorites = !this.product.isInFavorites
         },
         // priceDiscount() {
-        //     for (let i = 0; i < products.badges.length; i++) {
-        //         let el = products.badges[i];
+        //     for (let i = 0; i < this.product.badges.length; i++) {
+        //         let el = this.product.badges[i];
         //         if (el.includes("discount")) {
-        //             this.priceDisc = products.badges[i] * products.price / 100
+        //             this.priceDisc = this.product.badges[i] * this.product.price / 100
         //         }
-        //     }
-        // }
-        // priceDiscount() {
-        //     for (let i = 0; i < this.products.badges.length; i++) {
-        //         let el = this.products.badges[i];
-        //         if (el.type.includes("discount")) {
-        //             this.priceDisc = this.products.badges[i] * this.products.price / 100
-        //         }
-
-        //         return priceDisc
         //     }
         // }
     },
-    // computed: {
-    //     priceDiscount() {
-    //         for (let i = 0; i < this.products.badges.length; i++) {
-    //             let el = this.products.badges[i];
-    //             if (el.type.includes("discount")) {
-    //                 this.priceDisc = this.products.badges[i] * this.products.price / 100
-    //             }
-
-    //             return priceDisc
-    //         }
-    //     }
-    // }
     // mounted() {
-    //     priceDiscount() {
-    //         for (let i = 0; i < products.badges.length; i++) {
-    //             let el = products.badges[i];
-    //             if (el.type.includes("discount")) {
-    //                 this.priceDisc = products.badges[i] * products.price / 100
-    //             }
-    //         }
-    //     }
-    // }
-    // created() {
     //     this.priceDiscount()
     // }
 }
@@ -64,20 +32,20 @@ export default {
 <template>
     <div class="card">
         <div class="card-img">
-            <img :src="getImagePath(products.frontImage)" alt="dress-img">
-            <img class="img_hover" :src="getImagePath(products.backImage)" alt="">
+            <img :src="getImagePath(product.frontImage)" alt="dress-img">
+            <img class="img_hover" :src="getImagePath(product.backImage)" alt="">
         </div>
         <div class="card-footer">
-            <div class="brand">{{ products.brand }}</div>
-            <p class="description">{{ products.name }}</p>
+            <div class="brand">{{ product.brand }}</div>
+            <p class="description">{{ product.name }}</p>
             <!-- <span class="price-discount">{{ priceDisc }}</span> -->
-            <span class="old-price">{{ products.price }} &euro;</span>
+            <span class="old-price">{{ product.price }} &euro;</span>
         </div>
         <div class="button-dinamic display-flex">
-            <BadgesBoolando v-for="badge in products.badges" :text="badge.value" :type="badge.type" />
+            <BadgesBoolando v-for="badge in product.badges" :text="badge.value" :type="badge.type" />
         </div>
         <div @click="isFavorites" class="button-heart">
-            <i :class="products.isInFavorites === true ? 'color-red' : ''" class="fa fa-solid fa-heart"></i>
+            <i :class="product.isInFavorites === true ? 'color-red' : ''" class="fa fa-solid fa-heart"></i>
         </div>
     </div>
 </template>
@@ -119,17 +87,14 @@ export default {
 }
 
 .button-dinamic {
+    bottom: 80px;
+    left: 0px;
+    gap: 5px;
 
     div {
         color: white;
         padding: 3px 10px;
     }
-}
-
-.button-dinamic {
-    bottom: 80px;
-    left: 0px;
-    gap: 5px;
 }
 
 .button-heart {
