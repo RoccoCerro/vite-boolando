@@ -29,8 +29,6 @@ export default {
         }
     },
     mounted() {
-        console.log(this.priceDisc)
-        console.log(this.product);
         this.priceDiscount();
     }
 }
