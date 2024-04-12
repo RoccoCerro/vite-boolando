@@ -3,8 +3,8 @@
 import HeaderBoolando from "./components/HeaderBoolando.vue";
 import MainBoolando from "./components/MainBoolando.vue";
 import FooterBoolando from "./components/FooterBoolando.vue";
-import { store } from './store.js'
-import axios from 'axios'
+import { store } from './store.js';
+import axios from 'axios';
 
 export default {
   data() {

@@ -1,7 +1,12 @@
 <script>
+import BadgesBoolando from "./BadgesBoolando.vue"
+
 export default {
     priceDisc: null,
     props: ["products"],
+    components: {
+        BadgesBoolando
+    },
     methods: {
         getImagePath: function (img) {
             return new URL(`../assets/${img}`, import.meta.url).href
@@ -70,10 +75,7 @@ export default {
                 <span class="old-price">{{ products.price }} &euro;</span>
             </div>
             <div class="button-dinamic display-flex">
-                <div v-for="badge in products.badges"
-                    :class="badge.value === 'Sostenibilità' ? 'background-green' : 'background-red'">
-                    {{ badge.value }}
-                </div>
+                <BadgesBoolando v-for="badge in products.badges" :text="badge.value" />
             </div>
             <div @click="isFavorites" class="button-heart">
                 <i :class="products.isInFavorites === true ? 'color-red' : ''" class="fa fa-solid fa-heart"></i>
