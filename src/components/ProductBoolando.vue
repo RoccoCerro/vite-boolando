@@ -2,7 +2,11 @@
 import BadgesBoolando from "./BadgesBoolando.vue"
 
 export default {
-    priceDisc: 0,
+    data() {
+        return {
+            priceDisc: null,
+        }
+    },
     props: ["product"],
     components: {
         BadgesBoolando
@@ -14,18 +18,21 @@ export default {
         isFavorites() {
             this.product.isInFavorites = !this.product.isInFavorites
         },
-        // priceDiscount() {
-        //     for (let i = 0; i < this.product.badges.length; i++) {
-        //         let el = this.product.badges[i];
-        //         if (el.includes("discount")) {
-        //             this.priceDisc = this.product.badges[i] * this.product.price / 100
-        //         }
-        //     }
-        // }
+        priceDiscount() {
+            for (let i = 0; i < this.product.badges.length; i++) {
+                let el = this.product.badges[i];
+                if (el.type.includes("discount")) {
+                    console.log("ciao")
+                    this.priceDisc = (el.value.slice(1, 3) * this.product.price / 100).toFixed(2)
+                }
+            }
+        }
     },
-    // mounted() {
-    //     this.priceDiscount()
-    // }
+    mounted() {
+        console.log(this.priceDisc)
+        console.log(this.product);
+        this.priceDiscount();
+    }
 }
 </script>
 
@@ -38,7 +45,7 @@ export default {
         <div class="card-footer">
             <div class="brand">{{ product.brand }}</div>
             <p class="description">{{ product.name }}</p>
-            <!-- <span class="price-discount">{{ priceDisc }}</span> -->
+            <span class="price-discount">{{ priceDisc }}</span>
             <span class="old-price">{{ product.price }} &euro;</span>
         </div>
         <div class="button-dinamic display-flex">
