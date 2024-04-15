@@ -43,7 +43,7 @@ export default {
         <div class="card-footer">
             <div class="brand">{{ product.brand }}</div>
             <p class="description">{{ product.name }}</p>
-            <span class="price-discount">{{ priceDisc }}</span>
+            <span v-if="priceDisc !== null" class="price-discount">{{ priceDisc }}</span>
             <span class="old-price">{{ product.price }} &euro;</span>
         </div>
         <div class="button-dinamic display-flex">
