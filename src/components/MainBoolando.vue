@@ -9,14 +9,16 @@ export default {
         return {
             store,
             isOpen: false,
+            indexOfModal: 0,
         }
     },
     methods: {
         getImagePath: function (img) {
             return new URL(`${img}`, import.meta.url).href
         },
-        viewModal(){
-            this.isOpen = true
+        viewModal(i){
+            this.isOpen = true;
+            this.indexOfModal = i
         }
     },
     components: {
@@ -33,10 +35,10 @@ export default {
 <template>
     <div class="container">
         <div class="row">
-            <div class="col-4" v-for="dress in store.clothes">
-                <ProductBoolando @showProduct="viewModal" :product="dress" />
-                <ModalConfirm @closeModal="isOpen = false" :open="isOpen" :modelFrontImage="dress.frontImage"/>
+            <div class="col-4" v-for="(dress, i) in store.clothes">
+                <ProductBoolando @showProduct="viewModal(i)" :product="dress" />
             </div>
+            <ModalConfirm @closeModal="isOpen = false" :open="isOpen" :modelProduct="store.clothes[indexOfModal]"/> 
         </div>
     </div>
 </template>

@@ -5,7 +5,7 @@ export default {
             type: Boolean,
             default: false
         },
-        modelFrontImage: String
+        modelProduct: Object
     },
     methods: {
         getImagePath: function (img) {
@@ -21,10 +21,18 @@ export default {
             <button @click="$emit('closeModal')">Chiudi</button>
             <div class="container">
                 <div class="row modal-row">
-                    <div class="col modal-image">
-                        <img :src="getImagePath(modelFrontImage)" alt="frontImage">
+                    <div class="col-6 modal-image">
+                        <img :src="getImagePath(modelProduct.frontImage)" alt="frontImage">
+                        <img :src="getImagePath(modelProduct.backImage)" alt="">
                     </div>
-                    <div class="col modal-description"></div>
+                    <ul class="col-6 modal-description">
+                        <li>
+                            Brand: {{ modelProduct.brand }}
+                        </li>
+                        <li>
+                            Name: {{ modelProduct.name  }}
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -32,6 +40,7 @@ export default {
 </template> 
 
 <style lang="scss" scoped>
+
     .modal-wrapper{
         width: 100%;
         height: 100vh;
@@ -40,7 +49,7 @@ export default {
         bottom: 0;
         left: 0;
         right: 0;
-        background-color: rgba(0, 0, 0, 0.226);
+        background-color: rgba(0, 0, 0, 0.719);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -48,32 +57,40 @@ export default {
         z-index: 1;
 
         .modal{
-            padding: 50px;
+            padding: 15px;
             border: 1px solid white;
             border-radius: 8px;
-
+            position: relative;
         }
 
         button{
-            position: relative;
-            bottom: 45px;
-            right: 45px;
-            color: rgba(99, 23, 18, 0.696);
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            color: rgb(99, 23, 18);
             padding: 5px 8px;
-            border-radius: 8px;
+            border-radius: 12px;
             font-weight: bold;
             border: none;
             background-color: rgba(255, 255, 255, 0.273);
-            font-size: 10px;
+            font-size: 16px;
             cursor: pointer;
 
             &:hover{
-                background-color: rgba(0, 0, 0, 0.564);
+                background-color: rgba(0, 0, 0, 0.185);
             }
         }
 
+        .modal-image{
+            padding: 10px;
+        }
+        
         img{
-            width: 50px;
+            width: calc(100% / 2);
+
+            &:not(:last-child){
+                padding-right: 5px;
+            }
         }
     }
 </style>

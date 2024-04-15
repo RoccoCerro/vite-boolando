@@ -41,8 +41,8 @@ export default {
             <img class="img_hover" :src="getImagePath(product.backImage)" alt="">
         </div>
         <div class="card-footer">
-            <div class="brand">{{ product.brand }}</div>
-            <p @click="$emit('showProduct')" class="description">{{ product.name }}</p>
+            <div @click="$emit('showProduct')" class="brand">{{ product.brand }}</div>
+            <p class="description">{{ product.name }}</p>
             <span v-if="priceDisc !== null" class="price-discount">{{ priceDisc }}</span>
             <span v-bind:class="{'old-price': priceDisc !== null}">{{ product.price }} &euro;</span>
         </div>
@@ -68,15 +68,12 @@ export default {
     .brand {
         font-size: $font-size-brand-and-price;
         color: rgba(0, 0, 0, 0.788);
+        cursor: pointer;
     }
 
     .description,
     .price-discount {
         font-weight: bold;
-    }
-
-    .description{
-        cursor: pointer;
     }
 
     .price-discount {
