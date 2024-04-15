@@ -44,7 +44,7 @@ export default {
             <div class="brand">{{ product.brand }}</div>
             <p class="description">{{ product.name }}</p>
             <span v-if="priceDisc !== null" class="price-discount">{{ priceDisc }}</span>
-            <span class="old-price">{{ product.price }} &euro;</span>
+            <span v-bind:class="{'old-price': priceDisc !== null}">{{ product.price }} &euro;</span>
         </div>
         <div class="button-dinamic display-flex">
             <BadgesBoolando v-for="badge in product.badges" :text="badge.value" :type="badge.type" />
