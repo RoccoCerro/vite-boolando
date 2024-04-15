@@ -2,20 +2,26 @@
 import ProductBoolando from "./ProductBoolando.vue"
 import DataProducts from "../assets/db.json"
 import { store } from '../store.js'
+import ModalConfirm from "./ModalConfirm.vue"
 
 export default {
     data() {
         return {
             stores: store,
+            isOpen: false,
         }
     },
     methods: {
         getImagePath: function (img) {
             return new URL(`${img}`, import.meta.url).href
+        },
+        viewModal(){
+            this.isOpen = true
         }
     },
     components: {
-        ProductBoolando
+        ProductBoolando,
+        ModalConfirm
     }
 }
 </script>
@@ -24,7 +30,8 @@ export default {
     <div class="container">
         <div class="row">
             <div class="col-4" v-for="dress in stores.clothes">
-                <ProductBoolando :product="dress" />
+                <ProductBoolando @showProduct="viewModal" :product="dress" />
+                <ModalConfirm @closeModal="isOpen = false" :open="isOpen"/>
             </div>
         </div>
     </div>

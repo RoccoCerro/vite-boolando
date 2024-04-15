@@ -9,7 +9,7 @@ export default {
     },
     props: ["product"],
     components: {
-        BadgesBoolando
+        BadgesBoolando,
     },
     methods: {
         getImagePath: function (img) {
@@ -42,7 +42,7 @@ export default {
         </div>
         <div class="card-footer">
             <div class="brand">{{ product.brand }}</div>
-            <p class="description">{{ product.name }}</p>
+            <p @click="$emit('showProduct')" class="description">{{ product.name }}</p>
             <span v-if="priceDisc !== null" class="price-discount">{{ priceDisc }}</span>
             <span v-bind:class="{'old-price': priceDisc !== null}">{{ product.price }} &euro;</span>
         </div>
