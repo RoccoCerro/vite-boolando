@@ -75,6 +75,10 @@ export default {
         font-weight: bold;
     }
 
+    .description{
+        cursor: pointer;
+    }
+
     .price-discount {
         color: $color-discount;
         padding-right: 5px;

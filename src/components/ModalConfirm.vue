@@ -10,7 +10,7 @@ export default {
 </script>
 
 <template>
-    <div v-if="open === true" class="modal-wrapper">
+    <div v-if="open === true" class="modal-wrapper" @click="$emit('closeModal')">
         <div class="modal">
             <button @click="$emit('closeModal')">Chiudi</button>
             <p>Info Prodotto:</p>
@@ -52,6 +52,7 @@ export default {
             border: none;
             background-color: rgba(255, 255, 255, 0.273);
             font-size: 10px;
+            cursor: pointer;
 
             &:hover{
                 background-color: rgba(0, 0, 0, 0.564);
