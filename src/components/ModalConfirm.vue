@@ -5,7 +5,7 @@ export default {
             type: Boolean,
             default: false
         },
-        modelProduct: Object
+        modelProduct: Object,
     },
     methods: {
         getImagePath: function (img) {
@@ -37,6 +37,12 @@ export default {
                         <li>
                             Name: {{ modelProduct.name  }}
                         </li>
+                        <li >
+                            Prezzo: {{ modelProduct.price }}
+                        </li>
+                        <li v-if="modelProduct.isInFavorites === true" class="is-favorites">
+                            Tra i tuoi preferiti!
+                        </li>
                     </ul>
                     <button @click="$emit('closeModal')">Chiudi</button>
                 </div>
@@ -61,7 +67,7 @@ export default {
         justify-content: center;
         color: white;
         z-index: 1;
-
+    }
         .modal{
             padding: 15px;
             border: 1px solid white;
@@ -87,6 +93,10 @@ export default {
             }
         }
 
+        .modal-row{
+            gap: 50px;
+        }
+
         .modal-image{
             padding: 10px;
 
@@ -107,6 +117,13 @@ export default {
                 }
             }
         }
+
+        .modal-description{
+            padding: 10px;
+            
+            .is-favorites{
+                padding-top: 20px;
+            }
         
     }
 </style>
