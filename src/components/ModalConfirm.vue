@@ -18,12 +18,17 @@ export default {
 <template>
     <div v-if="open === true" class="modal-wrapper" @click="$emit('closeModal')">
         <div class="modal">
-            <button @click="$emit('closeModal')">Chiudi</button>
             <div class="container">
                 <div class="row modal-row">
                     <div class="col-6 modal-image">
-                        <img :src="getImagePath(modelProduct.frontImage)" alt="frontImage">
-                        <img :src="getImagePath(modelProduct.backImage)" alt="">
+                        <div class="row">
+                            <div class="col front-image">
+                                <img :src="getImagePath(modelProduct.frontImage)" alt="frontImage">
+                            </div>
+                            <div class="col back-image">
+                                <img :src="getImagePath(modelProduct.backImage)" alt="">
+                            </div>
+                        </div>
                     </div>
                     <ul class="col-6 modal-description">
                         <li>
@@ -33,6 +38,7 @@ export default {
                             Name: {{ modelProduct.name  }}
                         </li>
                     </ul>
+                    <button @click="$emit('closeModal')">Chiudi</button>
                 </div>
             </div>
         </div>
@@ -83,14 +89,24 @@ export default {
 
         .modal-image{
             padding: 10px;
-        }
-        
-        img{
-            width: calc(100% / 2);
 
-            &:not(:last-child){
-                padding-right: 5px;
+            & .row{
+                gap:5px
+            }
+
+            img{
+                object-fit: cover;
+
+            }
+
+            .back-image{
+                
+                & img{
+                    border-bottom-right-radius: 50px;
+
+                }
             }
         }
+        
     }
 </style>
