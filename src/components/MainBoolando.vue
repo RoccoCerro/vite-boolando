@@ -7,7 +7,7 @@ import ModalConfirm from "./ModalConfirm.vue"
 export default {
     data() {
         return {
-            stores: store,
+            store,
             isOpen: false,
         }
     },
@@ -22,6 +22,10 @@ export default {
     components: {
         ProductBoolando,
         ModalConfirm
+    },
+    mounted(){
+        console.log("array",this.store.clothes);
+        // console.log(this.store.clothes[1].backImage);
     }
 }
 </script>
@@ -29,9 +33,9 @@ export default {
 <template>
     <div class="container">
         <div class="row">
-            <div class="col-4" v-for="dress in stores.clothes">
+            <div class="col-4" v-for="dress in store.clothes">
                 <ProductBoolando @showProduct="viewModal" :product="dress" />
-                <ModalConfirm @closeModal="isOpen = false" :open="isOpen"/>
+                <ModalConfirm @closeModal="isOpen = false" :open="isOpen" :modelFrontImage="dress.frontImage"/>
             </div>
         </div>
     </div>

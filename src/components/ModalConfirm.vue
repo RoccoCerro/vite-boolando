@@ -2,10 +2,16 @@
 export default {
     props: {
         open: {
-        type: Boolean,
-        default: false
+            type: Boolean,
+            default: false
+        },
+        modelFrontImage: String
+    },
+    methods: {
+        getImagePath: function (img) {
+            return new URL(`../assets/${img}`, import.meta.url).href
         }
-    }
+    },
 }
 </script>
 
@@ -13,7 +19,14 @@ export default {
     <div v-if="open === true" class="modal-wrapper" @click="$emit('closeModal')">
         <div class="modal">
             <button @click="$emit('closeModal')">Chiudi</button>
-            <p>Info Prodotto:</p>
+            <div class="container">
+                <div class="row modal-row">
+                    <div class="col modal-image">
+                        <img :src="getImagePath(modelFrontImage)" alt="frontImage">
+                    </div>
+                    <div class="col modal-description"></div>
+                </div>
+            </div>
         </div>
     </div>
 </template> 
@@ -57,6 +70,10 @@ export default {
             &:hover{
                 background-color: rgba(0, 0, 0, 0.564);
             }
+        }
+
+        img{
+            width: 50px;
         }
     }
 </style>
